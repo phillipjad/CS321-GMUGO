@@ -13,7 +13,7 @@ Functionality: Also falls under "Searching for activities around GMU." It's resp
 Functionality: This would be used internally, mainly for administrative purposes, to add or update activities in your database. It might not map directly to one of your high-level functionalities but is essential for managing your data.
 
 
-4. fetchDiscountsForActivity(activityId)
+4. getAvailableDiscounts(activityId)
 
 Functionality: "Showcasing available discounts." As the name suggests, this method fetches available discounts for a specific activity.
 
