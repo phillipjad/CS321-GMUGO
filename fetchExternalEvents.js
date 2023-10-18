@@ -17,7 +17,7 @@ async function fetchExternalEvents(apiUrl) {
         return eventData;
     } catch (error) {
         // Handle any errors that may occur during the API request.
-        console.error("Error fetching external events:", error);
+        console.error(`Error fetching external events: ${error}`);
         throw error; 
     }
 }
