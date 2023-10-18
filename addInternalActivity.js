@@ -1,5 +1,13 @@
 const axios = require('axios');
 
+/**
+ * This would be used internally, mainly for administrative purposes, 
+ * to add or update activities in your database. 
+ * It might not map directly to one of your high-level functionalities 
+ * but is essential for managing your data.
+ * @param {String} activityData the activity to be added
+ * @returns {String} posted the status whether activity was added
+ */
 async function addInternalActivity(activityData){
   var posted;
   try{

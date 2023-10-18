@@ -1,7 +1,7 @@
 /**
  * Check for available discounts for GMU students/staff for each activity.
- * @param  {[type]} activityId the type of activity
- * @return {[type]} discount list the list of discounts curated    
+ * @param  {number} activityId the type of activity
+ * @return {array} discount list the list of discounts curated    
  */
 async function getAvailableDiscounts(activityId){
     let url = "" //insert api url here
