@@ -1,6 +1,6 @@
 const addInternalActivity = require('./addInternalActivity')
 
-test('Adds a new activity to the internal database.' async() =>{
+test('Adds a new activity to the internal database.', async() =>{
   const mockCreateActivity = jest.fn((data) => {
     return {
       id: 'uniqueActivityID',	//add more properties
