@@ -1,7 +1,11 @@
 const axios = require('axios');
-
+/**
+* This function syncs data to cosmosDB
+* @param data - the data to be pushed to cosmosDB
+* @return int - a 1 if successful and a 0 if not
+*/
 async function integrateData(data){
-  var returnid, apiurl;
+  var returned = 0, apiurl = ""; //apiurl will be Azure Function endpoint
   const headers = {
     'Content-Type': 'application/json',
     'clientid': clientid
