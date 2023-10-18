@@ -5,7 +5,7 @@ const axios = require('axios');
 * @return int - a 1 if successful and a 0 if not
 */
 async function integrateData(data){
-  var returned = 0, apiurl = ""; //apiurl will be Azure Function endpoint
+  var returnid = 0, apiurl = ""; //apiurl will be Azure Function endpoint
   const headers = {
     'Content-Type': 'application/json',
     'clientid': clientid
