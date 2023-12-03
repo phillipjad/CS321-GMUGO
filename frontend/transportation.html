@@ -5,14 +5,16 @@
         <title> GMUGO</title>
 
         <!--links the css stylesheet with our html page:) -->
-        <link rel="stylesheet" type="text/css" media="screen" href="css files/index.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css files/transportation.css">
     </head>
 
     <body>
         <!--The header image and our logo-->
-        <center>
-            <img src="assets/gmu_go_B_2-3.png" height="100px">
-        </center>
+        <div class="header-img">
+            <center>
+                <img src="assets/gmu_go_B_2-3.png" height="100px">
+            </center>
+        </div>
         
         <!--Navigation bar stuff-->
         <div class="nav-bar">
@@ -26,32 +28,29 @@
             </ul>
         </div>
 
-        <!--Stuff to find events-->
-        <div class="find-events">
-            <p> Find Events Near You</p>
-            <div class="filter-search">
-                <div class="eat-drink">
-                    
-                    <!--select a location-->
-                    <select name="location">
-                        <option value="select">Select A Location</option>
-                        <option value="Alexandria">Alexandria</option>
-                        <option value="Alexandria">D.C Metro Area</option>
-                        <option value="Alexandria">Arlington</option>
-                        <option value="Alexandria">Fairfax</option>
-                        <option value="Alexandria">Fredericksburg</option>
-                        <option value="Alexandria">GMU</option>
-                    </select>
+        <!--list of transportation with images-->
+        <div class="transportation">
+            <div class="gmu-bus">
+                <a href="https://transportation.gmu.edu/shuttle-services/" target="_blank">
+                    <img src = "assets/gmu-bus.jpg">
+                </a>
+                <p>GMU BUS/SHUTTLES</p>
+            </div>
 
-                    <!--select a date-->
-                    <input type="date" id="date">
+            <div class="metrorail">
+                <a href="https://www.wmata.com/service/rail/" target="_blank">
+                    <img src = "assets/metrorail.jpg">
+                </a>
+                <p>METRORAIL</p>
+            </div>
 
-                    <!--A search button-->
-                    <button>Search</button>
-                </div>
+            <div class="metrorail">
+                <a href="https://www.wmata.com/service/bus/" target="_blank">
+                    <img src = "assets/metrobus.jpeg">
+                </a>
+                <p>METROBUS</p>
             </div>
         </div>
-
         <!--Bottom footer of page with links-->
         <footer>
             <div class="footer-stuff">
