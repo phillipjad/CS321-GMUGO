@@ -3,4 +3,4 @@ Make sure to install the following dependencies by running the following command
 npm install
 npm init -y
 npm install express
-npm install supertest
+npm install supertest assert
