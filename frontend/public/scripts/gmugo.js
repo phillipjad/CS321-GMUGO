@@ -1,8 +1,17 @@
 import axios from 'https://cdn.skypack.dev/axios';
-var userInfo = {};
+var userInfo = localStorage.getItem('userInfo');
+if (userInfo == null || userInfo == undefined) {
+    userInfo = {};
+}
+else {
+    userInfo = JSON.parse(userInfo);
+}
+
+console.log(userInfo);
 
 function addListeners() {
     document.getElementById('addInterestButton').addEventListener("click", addInterest);
+    document.getElementById('addInterestButton').addEventListener("change", addInterest);
     document.getElementById('addInterestButton').addEventListener("click", checkFormComplete);
     document.getElementById('interest').addEventListener("input", handleInterestChange);
     document.querySelectorAll('form > input').forEach((element) => {
@@ -12,23 +21,63 @@ function addListeners() {
         element.addEventListener("change", checkFormComplete);
     });
     document.querySelector('form')
-    .addEventListener('submit', (e) => {
-        e.preventDefault();
-        let info = new FormData(document.querySelector('form'));
-        for (var pair of info.entries()){
-            if (pair[0] != 'interest'){
-                userInfo[pair[0]] = pair[1];
+        .addEventListener('submit', (e) => {
+            e.preventDefault();
+            let info = new FormData(document.querySelector('form'));
+            for (var pair of info.entries()) {
+                if (pair[0] != 'interest') {
+                    userInfo[pair[0]] = pair[1];
+                }
+            }
+            userInfo['interests'] = []
+            let list = document.getElementById('interestsList');
+            for (var i = 0; i < list.children.length; i++) {
+                userInfo['interests'].push(list.children[i].innerHTML);
+            }
+            console.log(userInfo);
+            document.querySelector('form').reset();
+            localStorage.setItem('userInfo', JSON.stringify(userInfo));
+            console.log('stored');
+            prefillForm();
+        });
+}
+
+function prefillForm() {
+    if (Object.keys(userInfo).length > 0) {
+        var form = document.querySelector('form');
+        for (var key in userInfo) {
+            switch (key) {
+                case 'age':
+                    document.querySelector('form > input#age').value = userInfo[key];
+                    break;
+                case 'gender':
+                    if (userInfo[key] == 'male') {
+                        document.querySelector('form > input#genderMale').checked = true;
+                    } else {
+                        document.querySelector('form > input#genderFemale').checked = true;
+                    }
+                    break;
+                case 'interests':
+                    for (var i = 0, n = userInfo[key].length; i < n; i++) {
+                        let interest = userInfo[key][i];
+                        let list = document.getElementById('interestsList');
+                        let listItem = document.createElement("li");
+                        let listInterest = document.createTextNode(interest);
+                        listItem.append(listInterest);
+                        list.append(listItem);
+                    }
+                    break;
             }
         }
-        userInfo['interests'] = []
-        let list = document.getElementById('interestsList');
-        for (var i = 0; i < list.children.length; i++){
-            userInfo['interests'].push(list.children[i].innerHTML);
+    }
+    if (Object.keys(userInfo).length == 3) {
+        document.querySelectorAll('form > input').forEach((element) => {
+            element.disabled = true;
+        });
+        if (userInfo['interests'].length != 5) {
+
         }
-        console.log(userInfo);
-        document.querySelector('form').reset();
-    });
-    document.getElementById('interestLink').addEventListener('click', ()=>{console.log('hi')})
+    }
 }
 
 function handleInterestChange(e) {
@@ -90,11 +139,19 @@ function addInterest() {
     let listInterest = document.createTextNode(interest);
     listItem.append(listInterest);
     list.append(listItem);
-    console.log();
+    document.getElementById('interest').value = '';
+    document.getElementById('interest').focus();
+    if (list.children.length >= 5) {
+        document.getElementById('addInterestButton').disabled = true;
+        return;
+    }
 }
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
     addListeners();
-})
+});
+document.addEventListener("DOMContentLoaded", () => {
+    prefillForm();
+});
