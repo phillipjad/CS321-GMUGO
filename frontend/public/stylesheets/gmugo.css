@@ -1,5 +1,5 @@
-html{
-  background-color: rgba(200,200,200,0.1);
+html {
+  background-color: rgba(200, 200, 200, 0.1);
 }
 
 body {
@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgba(50,220,100,0.9);
+  background-color: rgba(50, 220, 100, 0.9);
   width: 100%
 }
 
@@ -30,8 +30,13 @@ body {
 .eat-drink p {
   font-family: Calibri, 'Trebuchet MS', sans-serif;
   font-size: 50px;
-
 }
+
+#userItinerary {
+  font-size: x-large;
+}
+
+
 
 .userInfoDiv {
   margin-top: 2%;
@@ -43,51 +48,70 @@ body {
 }
 
 .userInfoDiv input {
-  margin-bottom:5%;
-  margin-top:1%;
+  margin-bottom: 2%;
+  margin-top: 1%;
   height: 40px;
   width: 300px;
   border-radius: 12px;
   border-width: 2px;
-  border-color: rgba(0,0,0,0.3);
+  border-color: rgba(0, 0, 0, 0.3);
   font-family: Geneva, Tahoma, sans-serif;
   font-size: 18px;
 }
 
-.userInfoDiv input[type=radio]{
-  width:fit-content;
-  height:fit-content;
+#loading {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.userInfoDiv label {
-  margin-top:5%;
+.userInfoDiv select {
+  margin-bottom: 2%;
+  margin-top: 1%;
   height: 40px;
   width: 300px;
   border-radius: 12px;
   border-width: 2px;
-  border-color: rgba(0,0,0,0.3);
+  border-color: rgba(0, 0, 0, 0.3);
+  font-family: Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+}
+
+.userInfoDiv input[type=radio] {
+  width: fit-content;
+  height: fit-content;
+}
+
+.userInfoDiv label {
+  margin-top: 3 %;
+  height: 40px;
+  width: 300px;
+  border-radius: 12px;
+  border-width: 2px;
+  border-color: rgba(0, 0, 0, 0.3);
   font-family: Geneva, Tahoma, sans-serif;
   font-size: 18px;
 }
 
 .userInfoDiv input[type=submit] {
   background-color: rgba(0, 150, 0, 0.1);
-  border-color: rgba(0,0,0,0.2);
-  width:308px; 
+  border-color: rgba(0, 0, 0, 0.2);
+  width: 308px;
 }
 
 .userInfoDiv input[type=button] {
   background-color: rgba(0, 150, 0, 0.1);
-  border-color: rgba(0,0,0,0.2);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
-#addInterestButton{
-  width:150px;
+#addInterestButton {
+  width: 150px;
 }
 
-.interestsDiv{
-
-}
+.interestsDiv {}
 
 .eat-drink select {
   height: 40px;
@@ -218,7 +242,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgba(50,220,100,0.9);
+  background-color: rgba(50, 220, 100, 0.9);
 }
 
 #interestLink {
@@ -246,7 +270,7 @@ li a:hover {
 .find-events p {
   font-family: Calibri, 'Trebuchet MS', sans-serif;
   font-size: 50px;
-  margin-top: 100px;
+  margin-top: 2%;
   display: flex;
   justify-content: center;
 }
@@ -254,6 +278,10 @@ li a:hover {
 .find-events .filter-search {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .find-events .filter-search select {
@@ -265,6 +293,10 @@ li a:hover {
   margin-bottom: 6%;
 }
 
+.find-events #loading p {
+  font-size:24px;
+}
+
 .find-events .filter-search input {
   height: 40px;
   width: 300px;
@@ -274,14 +306,14 @@ li a:hover {
   margin-bottom: 3%;
 }
 
-#eventSearch{
+#eventSearch {
   width: 300px;
   border-radius: 36px;
 }
 
 .find-events .filter-search button {
   height: 40px;
-  margin-left:2%;
+  margin-left: 2%;
   font-size: 19px;
   font-family: Geneva, Tahoma, sans-serif;
 }
@@ -296,7 +328,7 @@ footer {
 }
 
 .footer-stuff {
-  background-color: rgba(50,220,100,0.9);
+  background-color: rgba(50, 220, 100, 0.9);
   display: flex;
 }
 
@@ -304,7 +336,7 @@ footer {
   width: 150px;
   height: auto;
   box-sizing: border-box;
-  padding: 15px;
+  padding-left: 15px;
 }
 
 .footer-stuff .category h3 {

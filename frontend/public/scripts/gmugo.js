@@ -70,16 +70,20 @@ function prefillForm() {
                         list.append(listItem);
                     }
                     break;
+                case 'location':
+                    document.querySelector('form > select').value = userInfo['location'];
+                    break;
             }
         }
     }
-    if (Object.keys(userInfo).length == 3) {
+    if (Object.keys(userInfo).length == 4) {
         document.querySelectorAll('form > input').forEach((element) => {
             if (element.id != 'interest' && element.id != 'resetUserInfo') {
                 console.log(element.id);
                 element.disabled = true;
             }
         });
+        document.querySelector('form > select').disabled = true;
         if (userInfo['interests'].length == 5) {
             document.querySelector('form > input#interest').disabled = true;
         }
@@ -108,7 +112,8 @@ function resetForm(e) {
                 break;
         }
     });
-
+    document.querySelector(form > select).value = '';
+    document.querySelector(form > select).disabled = false;
 }
 
 function handleInterestChange(e) {
@@ -164,15 +169,15 @@ function addInterest() {
         return;
     }
     if (!(list.children)) {
-        list.innerHTML = '';
+        list.innerHTML = "";
     }
     let listItem = document.createElement("li");
     let listInterest = document.createTextNode(interest);
     listItem.append(listInterest);
     list.append(listItem);
-    document.getElementById('interest').value = '';
+    document.getElementById('interest').value = "";
     document.getElementById('interest').focus();
-    if (list.children.length >= 5){
+    if (list.children.length >= 5) {
         document.getElementById('addInterestButton').disabled = true;
         document.getElementById('interest').disabled = true;
         return;

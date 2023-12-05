@@ -17,11 +17,8 @@
     <div class="nav-bar">
         <ul>
             <!--Tabs (and their links!)-->
-            <li><a href="index.html">Home</a></li>
-            <li><a href="transportation.html">Transportation</a></li>
-            <li><a href="eatdrink.html">Eat & Drink</a></li>
-            <li><a href="discounts.html">Student Discounts</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html">My Itinerary</a></li>
+            <li><a href="contact.html">Quickstart</a></li>
             <li class="selected" id="interestLink"><a href="userinfo.html">My Interests</a></li>
         </ul>
     </div>
@@ -32,10 +29,19 @@
             <form>
                 <label for="age">Age:</label><br>
                 <input type="number" id="age" name="age" min="13" max="105" required><br>
+                <label for="location">Location:</label><br>
+                <select id="location" name="location">
+                    <option value = "Alexandria">Alexandria</option>
+                    <option value = "D.C. Metro Area">D.C.</option>
+                    <option value = "Arlington">Arlington</option>
+                    <option value = "Fairfax">Fairfax</option>
+                    <option value = "Fredericksburg">Fredericksburg</option>
+                    <option value = "George Mason University">GMU</option>
+                </select><br>
                 <p>Please Select Your Gender:</p><br>
-                <input type="radio" id="genderMale" name="gender" value="male">
+                <input type="radio" id="genderMale" name="gender" value="man">
                 <label for="genderMale">Male</label><br>
-                <input type="radio" id="genderFemale" name="gender" value="female">
+                <input type="radio" id="genderFemale" name="gender" value="woman">
                 <label for="genderFemale">Female</label><br>
                 <label for="interest">Interests (Maximum 5):</label><br>
                 <input type="text" id="interest" name="interest">
@@ -55,7 +61,7 @@
     <footer>
         <div class="footer-stuff">
             <div class="category">
-                <h3>Location</h3>
+                <h3>Locations</h3>
                 <ul>
                     <ul>Alexandria</ul>
                     <ul>D.C Metro Area</ul>
@@ -63,15 +69,6 @@
                     <ul>Fairfax</ul>
                     <ul>Fredericksburg</ul>
                     <ul>GMU</ul>
-                </ul>
-            </div>
-
-            <div class="category">
-                <h3>Transportation</h3>
-                <ul>
-                    <ul>GMU Shuttles</ul>
-                    <ul>Metrobus</ul>
-                    <ul>Metrorail</ul>
                 </ul>
             </div>
         </div>
