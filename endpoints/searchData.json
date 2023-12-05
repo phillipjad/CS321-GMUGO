@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "name": "Coffee",
+    "name": "Coffee"
   },
   {
     "id": 2,
-    "name": "Escape room",
+    "name": "Escape room"
   },
   {
     "id": 3,
-    "name": "Bubble tea",
-  },
+    "name": "Bubble tea"
+  }
 ]
