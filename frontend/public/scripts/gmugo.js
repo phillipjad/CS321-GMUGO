@@ -10,6 +10,7 @@ else {
 console.log(userInfo);
 
 function addListeners() {
+    document.getElementById('resetUserInfo').addEventListener('click', resetForm);
     document.getElementById('addInterestButton').addEventListener("click", addInterest);
     document.getElementById('addInterestButton').addEventListener("change", addInterest);
     document.getElementById('addInterestButton').addEventListener("click", checkFormComplete);
@@ -29,21 +30,22 @@ function addListeners() {
                     userInfo[pair[0]] = pair[1];
                 }
             }
-            userInfo['interests'] = []
+            userInfo['interests'] = [];
             let list = document.getElementById('interestsList');
             for (var i = 0; i < list.children.length; i++) {
                 userInfo['interests'].push(list.children[i].innerHTML);
             }
             console.log(userInfo);
             document.querySelector('form').reset();
+            document.querySelector('#resetUserInfo').disabled = false;
             localStorage.setItem('userInfo', JSON.stringify(userInfo));
-            console.log('stored');
             prefillForm();
         });
 }
 
 function prefillForm() {
     if (Object.keys(userInfo).length > 0) {
+        document.querySelector('#resetUserInfo').disabled = false;
         var form = document.querySelector('form');
         for (var key in userInfo) {
             switch (key) {
@@ -58,9 +60,10 @@ function prefillForm() {
                     }
                     break;
                 case 'interests':
+                    let list = document.getElementById('interestsList');
+                    list.innerHTML = '';
                     for (var i = 0, n = userInfo[key].length; i < n; i++) {
                         let interest = userInfo[key][i];
-                        let list = document.getElementById('interestsList');
                         let listItem = document.createElement("li");
                         let listInterest = document.createTextNode(interest);
                         listItem.append(listInterest);
@@ -72,12 +75,40 @@ function prefillForm() {
     }
     if (Object.keys(userInfo).length == 3) {
         document.querySelectorAll('form > input').forEach((element) => {
-            element.disabled = true;
+            if (element.id != 'interest' && element.id != 'resetUserInfo') {
+                console.log(element.id);
+                element.disabled = true;
+            }
         });
-        if (userInfo['interests'].length != 5) {
-
+        if (userInfo['interests'].length == 5) {
+            document.querySelector('form > input#interest').disabled = true;
         }
     }
+}
+
+function resetForm(e) {
+    userInfo = {};
+    localStorage.removeItem('userInfo');
+    document.getElementById('interestsList').innerHTML = '';
+    document.querySelectorAll('form > input').forEach((element) => {
+        switch (element.type) {
+            case 'radio':
+                element.checked = false;
+                element.disabled = false;
+                break;
+            case 'number':
+            case 'text':
+                element.value = '';
+                element.disabled = false;
+                break;
+            case 'button':
+                if (element.id == 'resetUserInfo') {
+                    element.disabled = true;
+                }
+                break;
+        }
+    });
+
 }
 
 function handleInterestChange(e) {
@@ -96,7 +127,7 @@ function checkFormComplete(e) {
         if (element.type == 'text' || element.type == 'number') {
             if (element.name == 'interest') {
                 let list = document.getElementById('interestsList');
-                if (list.children[0].id == 'placeholder') {
+                if (!(list.children)) {
                     filled = false;
                 }
             }
@@ -114,7 +145,6 @@ function checkFormComplete(e) {
             }
         }
     });
-    console.log(`filled: ${filled}\nradioFilled: ${radioFilled}`)
     if (filled && radioFilled) {
         document.getElementById("userInfoSubmit").disabled = false;
     }
@@ -130,9 +160,10 @@ function addInterest() {
     let list = document.getElementById('interestsList');
     if (list.children.length >= 5) {
         document.getElementById('addInterestButton').disabled = true;
+        document.getElementById('interest').disabled = true;
         return;
     }
-    if (list.children[0].id == 'placeholder') {
+    if (!(list.children)) {
         list.innerHTML = '';
     }
     let listItem = document.createElement("li");
@@ -141,8 +172,9 @@ function addInterest() {
     list.append(listItem);
     document.getElementById('interest').value = '';
     document.getElementById('interest').focus();
-    if (list.children.length >= 5) {
+    if (list.children.length >= 5){
         document.getElementById('addInterestButton').disabled = true;
+        document.getElementById('interest').disabled = true;
         return;
     }
 }

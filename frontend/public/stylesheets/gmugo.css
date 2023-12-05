@@ -1,3 +1,12 @@
+html{
+  background-color: rgba(200,200,200,0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .nav-bar ul {
   display: flex;
 
@@ -7,16 +16,15 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #7ad58f;
+  background-color: rgba(50,220,100,0.9);
   width: 100%
 }
 
 .eat-drink {
-  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .eat-drink p {
@@ -62,10 +70,15 @@
   font-size: 18px;
 }
 
-.userInfoDiv input[type=submit]{
+.userInfoDiv input[type=submit] {
   background-color: rgba(0, 150, 0, 0.1);
   border-color: rgba(0,0,0,0.2);
   width:308px; 
+}
+
+.userInfoDiv input[type=button] {
+  background-color: rgba(0, 150, 0, 0.1);
+  border-color: rgba(0,0,0,0.2);
 }
 
 #addInterestButton{
@@ -205,7 +218,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #7ad58f;
+  background-color: rgba(50,220,100,0.9);
 }
 
 #interestLink {
@@ -249,6 +262,7 @@ li a:hover {
   border-radius: 36px;
   font-family: Geneva, Tahoma, sans-serif;
   font-size: 18px;
+  margin-bottom: 6%;
 }
 
 .find-events .filter-search input {
@@ -257,10 +271,17 @@ li a:hover {
   border-radius: 36px;
   font-family: Geneva, Tahoma, sans-serif;
   font-size: 18px;
+  margin-bottom: 3%;
+}
+
+#eventSearch{
+  width: 300px;
+  border-radius: 36px;
 }
 
 .find-events .filter-search button {
   height: 40px;
+  margin-left:2%;
   font-size: 19px;
   font-family: Geneva, Tahoma, sans-serif;
 }
@@ -271,11 +292,11 @@ footer {
   bottom: 0;
   width: 100%;
   /* Height of the footer*/
-  height: 200px;
+  height: fit-content;
 }
 
 .footer-stuff {
-  background-color: blanchedalmond;
+  background-color: rgba(50,220,100,0.9);
   display: flex;
 }
 
