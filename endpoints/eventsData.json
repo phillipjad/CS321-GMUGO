@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Straight Jokes! No Chaser Comedy Tour",
+    "date": "2023-12-20",
+    "location": "EagleBank Arena",
+    "description": "The event hosted by Mike Epps features standup comedy greats Cedric The Entertainer, Earthquake, D.L. Hughley, Lunell, Bruce Bruce and special guest Damon Williams."
+  },
+  {
+    "id": 2,
+    "name": "Metropolitan Jazz Orchestra",
+    "date": "2024-1-27",
+    "location": "Hylton Center",
+    "description": "Celebrate Mardi Gras early with Northern Virginia’s own Metropolitan Jazz Orchestra in Carnival Celebration: Music from New Orleans to Rio to the Islands."
+  },
+  {
+    "id": 3,
+    "name": "Concert Night",
+    "date": "2023-12-16",
+    "location": "EagleBank Arena",
+    "description": "Men's Basketball against Loyola University"
+  }
+]

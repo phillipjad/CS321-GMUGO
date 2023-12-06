@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Trail and Park",
+    "location": "Fairfax Villa Park",
+    "description": "This large wooded park in a residential area offers walking/biking/hiking trails & wildlife."
+  },
+  {
+    "id": 2,
+    "name": "Short Trail and Park",
+    "location": "Daniels Run Park",
+    "description": "Woodland park with a small stream running through it, plus hiking trails & a little playground."
+  },
+  {
+    "id": 3,
+    "name": "Stream, Trail, and Park",
+    "location": "Long Branch Stream Valley Park",
+    "description": "Park with a small stream, greenery, and enchanting wilderness with a stream running through."
+  }
+]
