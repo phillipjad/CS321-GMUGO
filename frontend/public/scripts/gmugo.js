@@ -112,8 +112,8 @@ function resetForm(e) {
                 break;
         }
     });
-    document.querySelector(form > select).value = '';
-    document.querySelector(form > select).disabled = false;
+    document.querySelector('form > select').value = '';
+    document.querySelector('form > select').disabled = false;
 }
 
 function handleInterestChange(e) {
